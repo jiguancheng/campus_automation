@@ -1,0 +1,5 @@
+account = "your phone number"
+# 账号(手机号)
+pwd = "your password"
+# 密码
+# 自动登陆用
