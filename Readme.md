@@ -15,7 +15,7 @@ U校园选择题自动猜测
   - 在该路径下打开cmd(可以直接在文件资源管理器地址栏输入cmd并回车)
   - 创建虚拟环境`python -m venv .venv`
   - 激活虚拟环境`.venv\Scripts\activate.bat`
-  - 安装依赖库`pip install -r requirments.txt` (速度慢的话可以考虑设置默认下载源为清华镜像源`pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple`)
+  - 安装依赖库`pip install -r requirements.txt` (速度慢的话可以考虑设置默认下载源为清华镜像源`pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple`)
 - 运行
   - 在该路径下打开cmd
   - 激活虚拟环境`.venv\Scripts\activate.bat`

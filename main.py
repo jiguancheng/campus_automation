@@ -2,7 +2,7 @@ import time
 from tomllib import loads
 from typing import Optional, Dict
 
-from selenium.webdriver import Edge
+from selenium.webdriver import Edge, EdgeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.options import Options
 from selenium.webdriver.remote.webelement import WebElement
@@ -115,7 +115,8 @@ def process_record(driver: Edge, record: str) -> Optional[Dict]:
 
 options = Options()
 options.set_capability("ms:loggingPrefs", {'performance': 'ALL'})
-driver = Edge(options=options)
+service = EdgeService(executable_path="msedgedriver.exe")
+driver = Edge(options=options, service=service)
 driver.execute_cdp_cmd("Network.enable", {})
 
 login(driver)  # Login
