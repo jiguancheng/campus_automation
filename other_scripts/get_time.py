@@ -8,7 +8,7 @@ from selenium.webdriver.remote.webelement import WebElement
 login_configs = loads(open(r".\..\key.toml", encoding="utf-8").read())
 configs = loads(open(r"config.toml", encoding="utf-8").read())
 account, pwd = login_configs.values()
-book_keyword, units, stop_time, loop_time = configs.values()
+book_keyword, units, stop_time, loop_time = configs["get_time"].values()
 
 
 def get_parent(element: WebElement, times: int = 1):
@@ -96,6 +96,8 @@ for _ in range(loop_time):
         text = i.find_elements(By.CLASS_NAME, "ant-table-cell")[2].text
         durations.append(text_to_time(text))
     min_index = durations.index(min(durations))
+    print(durations)
+    print(f"choose index: {min_index}, value: {durations[min_index]}")
     records[min_index].find_elements(By.CLASS_NAME, "ant-table-cell")[-1].find_element(By.TAG_NAME, "a").click()
     time.sleep(5)
     try:  # deal with the popup
